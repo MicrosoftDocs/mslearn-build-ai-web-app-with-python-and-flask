@@ -1,13 +1,3 @@
----
-page_type: sample
-languages:
-- python
-products:
-- dotnet
-description: "Microsoft Learn module: Build an AI web app by using Python and Flask"
-urlFragment: "mslearn-build-ai-web-app-with-python-and-flask"
----
-
 # Microsoft Learn: Build an AI web app by using Python and Flask
 
 This repository contains the supporting code and deployment resources for the [Build an AI web app by using Python and Flask](https://github.com/MicrosoftDocs/learn-pr/tree/NEW-student-python-flask/learn-pr/student-evangelism/python-flask-build-ai-web-app)  module on Microsoft Learn.
