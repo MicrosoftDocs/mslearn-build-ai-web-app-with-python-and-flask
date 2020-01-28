@@ -19,8 +19,6 @@ app.secret_key = os.urandom(24)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    language="en"
-
     if request.method == "POST":
         # Display the image that was uploaded
         image = request.files["file"]
@@ -31,7 +29,7 @@ def index():
         lines = extract_text_from_image(image, vision_client)
         
         # Use the Translator Text API to translate text extracted from the image
-        language = request.form["language"]
+        language = request.form.get("language", "en")
         translated_lines = translate_text(lines, language, translate_key)
 
         # Flash the translated text
