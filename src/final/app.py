@@ -19,6 +19,9 @@ app.secret_key = os.urandom(24)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+
+    language = "en"
+
     if request.method == "POST":
         # Display the image that was uploaded
         image = request.files["file"]
