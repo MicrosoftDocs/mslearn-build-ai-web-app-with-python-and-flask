@@ -69,11 +69,17 @@ def extract_text_from_image(image, client):
 
 # Function the translates text into the specified language
 def translate_text(lines, language, key):
-    uri = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=" + language
+    uri = "https://api.cognitive.microsofttranslator.com/translate"
+    api_version = "3.0"
 
     headers = {
         'Ocp-Apim-Subscription-Key': key,
         'Content-type': 'application/json'
+    }
+
+    params = {
+        'api-version': api_version,
+        'to': language
     }
 
     input=[]
@@ -82,7 +88,7 @@ def translate_text(lines, language, key):
         input.append({ "text": line })
 
     try:
-        response = requests.post(uri, headers=headers, json=input)
+        response = requests.post(uri, headers=headers, params=params, json=input)
         response.raise_for_status() # Raise exception if call failed
         results = response.json()
 
